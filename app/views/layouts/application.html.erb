@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
   <title>
 		<% if content_for?(:title) %>
 			<%= yield(:title) %>
@@ -21,6 +21,10 @@
 		<%= value %>
 	</div>
 <% end %>
+
+<nav>
+  <%= link_to "Sign up", new_user_registration_path %>
+</nav>
 
 <%= yield %>
 
