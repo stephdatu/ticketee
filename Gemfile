@@ -4,11 +4,16 @@ gem 'rails', '3.2.13'
 gem 'dynamic_form', '1.1.4'
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
+gem 'paperclip', '2.7.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+group :development do
+  gem 'coffee-rails-source-maps'
+end
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'

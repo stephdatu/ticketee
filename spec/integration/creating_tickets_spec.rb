@@ -2,8 +2,8 @@ require 'spec_helper'
 
 feature "Creating Tickets" do
     before do
-      project = Factory(:project, :name => "Internet Explorer")
-      user = Factory(:confirmed_user, :email => "ticketee@example.com")
+      project = Factory(:project, name: "Internet Explorer")
+      user = Factory(:confirmed_user, email: "ticketee@example.com")
       define_permission!(user, "view", project)
       define_permission!(user, "create tickets", project)
       sign_in_as!(user)
@@ -16,8 +16,8 @@ feature "Creating Tickets" do
     end
 
   scenario "Creating a ticket" do
-    fill_in "Title", :with => "Non-standards compliance"
-    fill_in "Description", :with => "My pages are ugly!"
+    fill_in "Title", with: "Non-standards compliance"
+    fill_in "Description", with: "My pages are ugly!"
     click_button "Create Ticket"
     page.should have_content("Ticket has been created.")
     within("#ticket #author") do
@@ -33,10 +33,21 @@ feature "Creating Tickets" do
   end
 
   scenario "Description must be longer than 10 characters" do
-    fill_in "Title", :with => "Non-standards compliance"
-    fill_in "Description", :with => "it sucks"
+    fill_in "Title", with: "Non-standards compliance"
+    fill_in "Description", with: "it sucks"
     click_button "Create Ticket"
     page.should have_content("Ticket has not been created.")
+  end
+
+  scenario "Creating a ticket with an attachment" do
+    fill_in "Title", with: "Add documentation for blink tag"
+    fill_in "Description", with: "The blink tag has a speed attribute"
+    attach_file "File", "spec/fixtures/speed.txt"
+    click_button "Create Ticket"
+    page.should have_content("Ticket has been created.")
+    within ("#ticket .asset") do
+      page.should have_content("speed.txt")
+    end
   end
 end
 
