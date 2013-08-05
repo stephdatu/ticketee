@@ -70,6 +70,10 @@
         1,
         null
       ],
+      "/home/stephdatu/dev/ticketee/app/helpers/files_helper.rb": [
+        1,
+        null
+      ],
       "/home/stephdatu/dev/ticketee/app/helpers/projects_helper.rb": [
         1,
         null
@@ -183,6 +187,23 @@
         1,
         1,
         17,
+        null,
+        null
+      ],
+      "/home/stephdatu/dev/ticketee/app/controllers/files_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -372,11 +393,11 @@
         1,
         null,
         1,
-        77,
-        110,
+        79,
+        111,
         null,
         null,
-        40,
+        41,
         null,
         null,
         null,
@@ -387,9 +408,10 @@
         1,
         1,
         1,
+        1,
         null
       ]
     },
-    "timestamp": 1375731334
+    "timestamp": 1375735919
   }
 }

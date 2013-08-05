@@ -47,7 +47,7 @@ feature "Creating Tickets" do
     attach_file "File #3", File.expand_path("spec/fixtures/gradient.txt")
     click_button "Create Ticket"
     page.should have_content("Ticket has been created.")
-    within ("#ticket .asset") do
+    within ("#ticket .assets") do
       page.should have_content("speed.txt")
       page.should have_content("spin.txt")
       page.should have_content("gradient.txt")
