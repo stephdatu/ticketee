@@ -278,6 +278,7 @@
         null,
         1,
         5,
+        20,
         null,
         null,
         1,
@@ -353,6 +354,8 @@
         1,
         1,
         1,
+        null,
+        1,
         1,
         null,
         1,
@@ -379,8 +382,14 @@
         null,
         null,
         null
+      ],
+      "/home/stephdatu/dev/ticketee/app/models/asset.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1375729041
+    "timestamp": 1375731334
   }
 }
