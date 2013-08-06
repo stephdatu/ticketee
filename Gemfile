@@ -9,7 +9,9 @@ gem 'paperclip', '2.7.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
 
 group :development do
   gem 'coffee-rails-source-maps'
@@ -21,9 +23,11 @@ group :test, :development do
 end
 
 group :test do
+  gem 'sqlite3'
 	gem 'capybara', '1.1.2'
+  gem 'capybara-webkit'
   gem 'factory_girl', '2.6.4'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
   gem 'email_spec', '1.2.1'
   gem 'database_cleaner', '0.7.2'
 end

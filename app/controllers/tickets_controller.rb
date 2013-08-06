@@ -1,10 +1,10 @@
 class TicketsController < ApplicationController
 before_filter :authenticate_user!
 before_filter :find_project
-before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
-before_filter :authorize_create!, :only => [:new, :create]
-before_filter :authorize_update!, :only => [:edit, :update]
-before_filter :authorize_delete!, :only => :destroy
+before_filter :find_ticket, only: [:show, :edit, :update, :destroy]
+before_filter :authorize_create!, only: [:new, :create]
+before_filter :authorize_update!, only: [:edit, :update]
+before_filter :authorize_delete!, only: :destroy
 
   def new
     @ticket = @project.tickets.build
@@ -19,7 +19,7 @@ before_filter :authorize_delete!, :only => :destroy
       redirect_to [@project, @ticket]
     else
       flash[:alert] = "Ticket has not been created."
-      render :action => "new"
+      render action: "new"
     end
   end
 

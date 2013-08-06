@@ -6,5 +6,5 @@ class Ticket < ActiveRecord::Base
   has_many :assets
   accepts_nested_attributes_for :assets
 
-  validates :title, :description, :presence => true, :length => { :minimum => 10 }
+  validates :title, :description, :presence => true, length: { minimum: 10 }
 end
